@@ -30,19 +30,19 @@ class pdManager
 		int setup();
 		void start();
 		void shutdown();
-        void pdCallback(Uint8 *stream, int len);
+        	void pdCallback(Uint8 *stream, int len);
 
-    private:
-        pd::PdBase mPd;
-        pd::Patch mPatch;
-        SDL_AudioDeviceID audioDevId;
+	private:
+        	pd::PdBase mPd;
+        	pd::Patch mPatch;
+        	SDL_AudioDeviceID audioDevId;
 		static const int sampleRate = 48000;
 		static const int numInputs = 0;
 		static const int numOutputs = 2;
 		static const int bufferSize = 512;
 		int blockSize;
 		int ticks;
-        float inbuf[0];
+        	float inbuf[0];
 };
 
 //function to pass the audioCallback to the pdManager class member function
