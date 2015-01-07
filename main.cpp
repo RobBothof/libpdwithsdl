@@ -24,8 +24,7 @@ class pdManager;
 const int SCREEN_WIDTH = 800;
 const int SCREEN_HEIGHT = 600;
 
-class pdManager
-{
+class pdManager {
 	public:
 		int setup();
 		void start();
