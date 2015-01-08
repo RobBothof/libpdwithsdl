@@ -4,10 +4,14 @@ Copyright (c) <2015> <Rob Bothof> <rbothof@xs4all.nl>
 
 This is free software released into the public domain
 
+Permission is granted to anyone to use this software for any purpose.
+
 This software is provided 'as-is', without any express or implied
 warranty. In no event will the author be held liable for any damages
 arising from the use of this software.
- 
+
+
+
  * Description:
  *
  * An Example of Hooking LibPd-ouput into the SDL2 audio backend.
