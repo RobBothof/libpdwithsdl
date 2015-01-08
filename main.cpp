@@ -60,17 +60,17 @@ void audioCallback(void* userdata, Uint8* stream, int len) {
 }
 
 void pdManager::pdCallback(Uint8* stream, int len) {
-    // here I connect libPD's output to SDL audio backend.
-    // The callback is automaticly invoked by SDL audio
-    // to request new samples once the audiodevice is unpaused.
-    // You can change the bufferSize for smaller latency at cpu cost.
+    	// here I connect libPD's output to SDL audio backend.
+    	// The callback is automaticly invoked by SDL audio
+    	// to request new samples once the audiodevice is unpaused.
+    	// You can change the bufferSize for smaller latency at cpu cost.
 
    	// 'len' gives us the number of samples requested, depending
    	// on SDL's audioformat, I use 32bit float so I multiply by 4)
    	// len =( SDLBuffersize * number of channels * 4)
 
-    // I calculate how many pd blocks I need to fill SDL's audiobuffer
-    // the number of blocks is called 'ticks'
+    	// I calculate how many pd blocks I need to fill SDL's audiobuffer
+    	// the number of blocks is called 'ticks'
    	// so calculate the number of ticks/blocks for one SDL stream request
 
    	ticks = len / (blockSize * numOutputs * 4);
@@ -81,8 +81,8 @@ void pdManager::pdCallback(Uint8* stream, int len) {
 
    	// pump the audio buffer directly to SDL
    	// inbuf is ignored as SDL2 does not support audio input atm.
-   	// but you could send wavefiles or generated audio to libPd
-   	// prepare the inbuf before calling processFloat
+   	// but you could send wavefiles or generated audio from SDL to libPd
+   	// in that case prepare the inbuf before calling processFloat
 
 	mPd.processFloat(ticks, inbuf, outbuf );
 
